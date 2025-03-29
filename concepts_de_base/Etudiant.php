@@ -40,33 +40,16 @@ class Etudiant{
     
     */
     public function afficheNotes(){
-        
-        echo "<table border='1'> <tr><th>$this->nom</th></tr>";        
-        
+        echo "<div class='card shadow-sm'>";
+        echo "<div class='card-header text-center fw-bold'>" . htmlspecialchars($this->nom) . "</div>";
+        echo "<ul class='list-group list-group-flush'>";
         foreach($this->notes as $note){
-            echo "<tr>";
-            $color ="";
-            if($note>10){
-                $color="green";
-            }
-            elseif($note<10){
-                $color="red";
-            }
-            else{
-                $color="orange";
-            }
-            echo "<td style='background-color:{$color}; padding:5px;'>{$note}</td>";
-            echo "</tr>";
-            
+            $colorClass = ($note > 10) ? "bg-success text-white" : (($note < 10) ? "bg-danger text-white" : "bg-warning");
+            echo "<li class='list-group-item $colorClass text-center'>" . htmlspecialchars($note) . "</li>";
         }
-        $moy = $this->calculMoyenne();
-        echo "<tr><td> votre moyenne est {$moy}</td></tr>";
-        echo "</table>";
-        
-
-
-        
-
+        $moy = $this->CalculMoyenne();
+        echo "<li class='list-group-item text-center bg-primary text-white'>Votre moyenne est $moy</li>";
+        echo "</ul></div>";
     }
     //methode estAdmis
     public function estAdmis(){
@@ -76,12 +59,3 @@ class Etudiant{
     }
 
 }
-/* this is used for testing 
-$aymen = new Etudiant("aymen" ,[11,13,18,7,10,13,2,5,1]);
-$skander =  new Etudiant("skander",[15,9,8,16]);
-
-$aymen->AfficheNotes();
-$skander->AfficheNotes();
-*/
-
-?>
