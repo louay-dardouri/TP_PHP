@@ -67,5 +67,3 @@ class SessionManager
         }
     }
 }
-
-$s = new SessionManager;
