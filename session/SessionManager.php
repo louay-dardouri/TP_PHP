@@ -2,15 +2,14 @@
 
 class SessionManager
 {
-    public function __construct()
+    public static function start(): void
     {
         if (session_status() == PHP_SESSION_NONE) {
             session_start();
-            $_SESSION['nbVisit'] = 0;
         }
     }
 
-    public function checkSession(): void
+    public static function checkSession(): void
     {
         if (session_status() == PHP_SESSION_NONE) {
             header('Location /');
@@ -18,7 +17,7 @@ class SessionManager
         }
     }
 
-    public function exist(string $key): bool
+    public static function exist(string $key): bool
     {
         return isset($_SESSION[$key]);
     }
@@ -26,9 +25,9 @@ class SessionManager
     /**
      * @return mixed
      */
-    public function get(string $key)
+    public static function get(string $key)
     {
-        if ($this->exist($key)) {
+        if (self::exist($key)) {
             return $_SESSION[$key];
         }
 
@@ -38,29 +37,27 @@ class SessionManager
     /**
      * @param  mixed  $value
      */
-    public function set(string $key, $value): SessionManager
+    public static function set(string $key, $value): void
     {
         $_SESSION[$key] = $value;
-
-        return $this;
     }
 
-    public function remove(string $key): void
+    public static function remove(string $key): void
     {
-        if ($this->exist($key)) {
+        if (self::exist($key)) {
             unset($_SESSION[$key]);
         }
     }
 
-    public function reset(): void
+    public static function reset(): void
     {
         session_unset();
     }
 
-    public function increaseVisits(): void
+    public static function increaseVisits(): void
     {
-        $this->checkSession();
-        if ($this->exist('nbVisit')) {
+        self::checkSession();
+        if (self::exist('nbVisit')) {
             $_SESSION['nbVisit'] += 1;
         } else {
             $_SESSION['nbVisit'] = 1;
