@@ -14,7 +14,7 @@ class Etudiant{
 
     
     //methode treturny moyenne
-    public function CalculMoyenne(){
+    public function calculMoyenne(){
         if(count($this->notes) === 0){
             return 0;
         } 
@@ -39,7 +39,7 @@ class Etudiant{
     </table>
     
     */
-    public function AfficheNotes(){
+    public function afficheNotes(){
         
         echo "<table border='1'> <tr><th>$this->nom</th></tr>";        
         
@@ -59,7 +59,7 @@ class Etudiant{
             echo "</tr>";
             
         }
-        $moy = $this->CalculMoyenne();
+        $moy = $this->calculMoyenne();
         echo "<tr><td> votre moyenne est {$moy}</td></tr>";
         echo "</table>";
         
@@ -69,24 +69,19 @@ class Etudiant{
 
     }
     //methode estAdmis
-    public function EstAdmis(){
+    public function estAdmis(){
         $moy = $this->CalculMoyenne();
         if($moy >= 10) echo "admis";
         else echo"non admis";
     }
 
 }
-
+/* this is used for testing 
 $aymen = new Etudiant("aymen" ,[11,13,18,7,10,13,2,5,1]);
 $skander =  new Etudiant("skander",[15,9,8,16]);
 
 $aymen->AfficheNotes();
 $skander->AfficheNotes();
-
-
-
-
-
-
+*/
 
 ?>
