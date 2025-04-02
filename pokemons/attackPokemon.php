@@ -5,7 +5,7 @@ class attackPokemon{
     private $specialAttack;
     private $probabilitySpecialAttack;
 
-
+    
 }
 
 ?>
