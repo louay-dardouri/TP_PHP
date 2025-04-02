@@ -49,22 +49,28 @@ class Pokemon{
         return $this->hp<=0;
     } 
 
-    public function attack(Pokemon $p){
+    public function attack(Pokemon $p):int{
         $atk = rand(
-        $this->attackPokemon->getAttackMinimal(),
-        $this->attackPokemon->getAttackMaximal());
+            $this->attackPokemon->getAttackMinimal(),
+            $this->attackPokemon->getAttackMaximal()
+        );
     
         $random = rand(1,100);
         if($random <= $this->attackPokemon->getProbalitySpecialAttack()){
             $atk = $atk*($this->attackPokemon->getSpecialAttack());
         }
         $p->hp -= $atk;
-        
+        return $atk;
     }
     public function whoAmI(){
-        echo "<div class='pokemon_container'>";
-        //todo!!!!
-        echo "";
+        echo '<div class="pokemon-container">';
+        echo "{$this->getName()}";
+        echo "<img class='image' src='{$this->getUrl()}' alt='{$this->getName()}'><hr>";
+        echo "HealthPoints: {$this->getHp()}<hr>";
+        echo "Min Attack Points: {$this->attackPokemon->getAttackMinimal()}<hr>";
+        echo "Max Attack Points: {$this->attackPokemon->getAttackMaximal()}<hr>";
+        echo "Special Attack: {$this->attackPokemon->getSpecialAttack()}<hr>";
+        echo "Probability Special Attack: {$this->attackPokemon->getProbalitySpecialAttack()}<hr>";
         echo "</div>";
     }
 
