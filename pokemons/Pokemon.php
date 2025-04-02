@@ -1,11 +1,17 @@
-<?php 
-require_once("AttackPokemon.php");
+<?php
+require_once("attackPokemon.php");
 
 class Pokemon{
-    private string $name;
-    private string $url;
-    private int $hp;
-    private AttackPokemon $attackPokemon;
+    protected string $name;
+    protected string $url;
+    protected int $hp;
+    protected AttackPokemon $attackPokemon;
+
+    protected string $type = 'normal';
+    public function getType(): string
+    {
+	return $this->type;
+    }
 
     public function getName():string{
         return $this->name;
@@ -43,18 +49,18 @@ class Pokemon{
         $this->url = $url;
         $this->hp = $hp;
         $this->attackPokemon = new AttackPokemon($attackMinimal,$attackMaximal,$specialAttack,$proba);
-    } 
+    }
 
     public function isDead():bool {
         return $this->hp<=0;
-    } 
+    }
 
     public function attack(Pokemon $p):int{
         $atk = rand(
             $this->attackPokemon->getAttackMinimal(),
             $this->attackPokemon->getAttackMaximal()
         );
-    
+
         $random = rand(1,100);
         if($random <= $this->attackPokemon->getProbalitySpecialAttack()){
             $atk = $atk*($this->attackPokemon->getSpecialAttack());
