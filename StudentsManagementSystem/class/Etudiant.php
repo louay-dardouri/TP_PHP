@@ -8,23 +8,24 @@ class Etudiant{
         $this->_conn = $db;
     }
     public function listEtudiants(){
-        $query = 'Select * from student;';
+        $query = 'Select * from '.$this->_table;
         $res = $this->_conn->query($query);
-        return $res->fetchAll();
+        return $res->fetchAll(PDO::FETCH_ASSOC);
 
     }
 
     public function listEtudiantsByName(string $name){
-        $query = 'Select * from student where name like %:name%;';
+        $query = 'Select * from '.$this->_table.' where name like :name';
+        $name = "%".$name."%";
         $st = $this->_conn->prepare($query);
         $st->execute(['name' => $name]);
-        return $st->fetchAll();
+        return $st->fetchAll(PDO::FETCH_ASSOC);
     }
     
     public function listEtudiantsBySection(int $section){
-        $query = 'Select * from student where section = :section';
+        $query = 'Select * from '.$this->_table.' where section = :section';
         $st = $this->_conn->prepare($query);
         $st->execute(['section' => $section]);
-        return $st->fetchAll();
+        return $st->fetchAll(PDO::FETCH_ASSOC);
     }
 }
