@@ -28,3 +28,9 @@ a:hover {
 a:active {
   transform: scale(1);
 }
+
+h1 {
+  text-align: center;
+  font-size: 36px;
+  margin-top: 20px;
+}
