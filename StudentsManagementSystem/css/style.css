@@ -1,0 +1,30 @@
+nav {
+  background-color: #4e77a5;
+  padding: 10px 20px;
+  text-align: left;
+}
+
+span,
+a {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+span {
+  font-weight: bolder;
+  font-size: 22px;
+}
+
+a:hover {
+  transform: scale(1.05);
+}
+
+a:active {
+  transform: scale(1);
+}
