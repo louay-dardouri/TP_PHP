@@ -44,8 +44,8 @@ $cssPath = 'css/login.css';
         <select name="user_id" id="user_id" required>
             <?php
                 $users = $utilisateur->getUsers();
-foreach ($users as $user) {
-    ?>
+                foreach ($users as $user) {
+            ?>
                 <option value="<?= $user['id'] ?>">
                     <?= htmlspecialchars($user['username']) ?> - (<?= $user['role'] ?>)
                 </option>
@@ -56,7 +56,7 @@ foreach ($users as $user) {
         <br><br>
         <span class="wrong-pass"> <?php echo $wrong; ?></span> <br>
         <button class="login" type="submit">Login</button>
-        <button class="register "type="submit">Register</button>
+        <button class="register"><a href="register.php">Register</a></button>
     </form>
     </div>
 <?php include_once 'fragments/footer.php'; ?>
