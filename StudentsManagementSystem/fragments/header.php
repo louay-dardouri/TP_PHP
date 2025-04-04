@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <?php if (isset($cssPath)){
-      echo "<link rel='stylesheet' href= '$cssPath'> "; 
+    <?php if (isset($cssPath)) {
+        echo "<link rel='stylesheet' href= '$cssPath'> ";
     }?>
     <title>
       <?php echo $pageTitle ?? 'Students Management System'; ?>
@@ -15,7 +15,7 @@
     <nav>
       <span>Students Management System</span>
       <a href="home.php">Home</a >
-      <a href="#">Liste des etudiants</a >
+      <a href="listeEtudiants.php">Liste des etudiants</a >
       <a href="#">Liste des sections</a >
       <a href="logout.php">Logout</a >
     </nav>
