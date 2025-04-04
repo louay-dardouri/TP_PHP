@@ -17,7 +17,7 @@
       <span>Students Management System</span>
       <a href="home.php">Home</a >
       <a href="listeEtudiants.php">Liste des etudiants</a >
-      <a href="#">Liste des sections</a >
+      <a href="listeSections.php">Liste des sections</a >
       <a href="logout.php">Logout</a >
     </nav>
 
