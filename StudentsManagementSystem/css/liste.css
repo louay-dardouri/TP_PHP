@@ -87,3 +87,49 @@ input {
   background-color: #f8d7da;
   border-color: #f5c2c7;
 }
+.icon-1 {
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.icon-1:hover i {
+  color: gray;
+}
+form{
+  margin-left: 10px;
+}
+.filter-container {
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+}
+.filter-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  font-size: 14px;
+  width: 200px;
+}
+.filter-button {
+  padding: 10px 15px;
+  border: none;
+  background-color: rgb(190, 11, 11);
+  color: white;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0;
+  font-size: 14px;
+}
+.filter-button:hover {
+  background-color: darkred;
+}
+
+.icon {
+  font-size: 20px;
+  color: #3498db;
+  cursor: pointer;
+}
+
+.icon:hover i {
+  color: gray;
+}
