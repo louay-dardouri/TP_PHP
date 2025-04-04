@@ -1,0 +1,89 @@
+button {
+  padding: 5px;
+  color: blue;
+  font-size: 22px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+th {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px;
+  text-align: center;
+}
+
+td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 10px;
+}
+
+.buttons-container > button {
+  color: black;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+label {
+  font-size: 14px;
+}
+
+input {
+  padding: 5px;
+  font-size: 14px;
+}
+
+/* bootstrap like alerts */
+.alert {
+  width: 570px;
+  padding: 15px;
+  margin: 35px auto auto auto;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.alert-success {
+  color: #0f5132;
+  background-color: #d1e7dd;
+  border-color: #badbcc;
+}
+
+.alert-danger {
+  color: #842029;
+  background-color: #f8d7da;
+  border-color: #f5c2c7;
+}
