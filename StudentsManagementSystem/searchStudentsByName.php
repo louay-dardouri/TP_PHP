@@ -2,10 +2,6 @@
 
 include_once 'class/autoloader.php';
 
-echo '<script>
-  console.log("kjsdlkfj");
-</script>';
-
 if (isset($_POST['search'])) {
     $search = $_POST['search'];
 
