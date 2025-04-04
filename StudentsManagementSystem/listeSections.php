@@ -21,12 +21,12 @@ include_once 'fragments/header.php';
 
   <div class="input-container">
     <label for="search">Search: </label>
-    <input type="text" name="search" value="">
+    <input type="text" name="search" id="s-section">
   </div>
 </div>
 
 <hr>
-<table>
+<table id="students-table">
 <tr>
     <th>id</th>
     <th>designation</th>
@@ -57,4 +57,7 @@ foreach ($sections as $st) {
 ?>
 </table>
 
+<script src="js/searchSections.js"></script>
+
 <?php include_once 'fragments/footer.php';
+
