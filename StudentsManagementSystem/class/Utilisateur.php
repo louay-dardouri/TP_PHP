@@ -41,4 +41,17 @@ class Utilisateur{
         $res->execute(['id' => $id]);
         return $res->rowCount();
     }
+    public function getUsers() {
+        $query = "SELECT id, username, email, role FROM " . $this->_table;
+        $res = $this->_conn->prepare($query);
+        $res->execute();
+        return $res->fetchAll(PDO::FETCH_ASSOC);
+    }
+    
+    public function getUserById($id) {
+        $query = "SELECT id, username, email, role FROM " . $this->_table . " WHERE id = :id";
+        $res = $this->_conn->prepare($query);
+        $res->execute(['id' => $id]);
+        return $res->fetch(PDO::FETCH_ASSOC);
+    }
 }
