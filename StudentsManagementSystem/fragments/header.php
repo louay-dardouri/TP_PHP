@@ -17,6 +17,6 @@
       <a href="home.php">Home</a >
       <a href="#">Liste des etudiants</a >
       <a href="#">Liste des sections</a >
-      <a href="#">Logout</a >
+      <a href="logout.php">Logout</a >
     </nav>
 
