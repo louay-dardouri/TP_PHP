@@ -1,76 +1,91 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  body {
-    background-color: #f8f9fa;
-    color: #333;
-    line-height: 1.6;
-    padding: 20px;
-  }
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-  }
-  .header {
-    background-color: #3498db;
-    color: white;
-    padding: 20px;
-    text-align: center;
-  }
-  .header h1 {
-    font-size: 28px;
-    margin-bottom: 5px;
-  }
-  .student-profile {
-    display: flex;
-    padding: 30px;
-  }
-  .student-image {
-    flex: 0 0 200px;
-    margin-right: 30px;
-  }
-  .student-image img {
-    width: 100%;
-    border-radius: 8px;
-    border: 3px solid #eee;
-  }
-  .student-info {
-    flex: 1;
-  }
-  .info-group {
-    margin-bottom: 15px;
-  }
-  .info-label {
-    font-weight: 600;
-    color: #7f8c8d;
-    margin-bottom: 5px;
-  }
-  .info-value {
-    font-size: 16px;
-    padding: 8px 0;
-    border-bottom: 1px solid #eee;
-  }
-  .back-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #3498db;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-  }
-  .back-btn:hover {
-    background-color: #2980b9;
-  }
-  .not-found {
-    text-align: center;
-    padding: 40px;
-    color: #e74c3c;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 70px auto;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.header {
+  background-color: #3498db;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+.student-profile {
+  display: flex;
+  padding: 30px;
+}
+
+.student-image {
+  flex: 0 0 200px;
+  margin-right: 30px;
+}
+
+.student-image img {
+  width: 100%;
+  border-radius: 8px;
+  border: 3px solid #eee;
+}
+
+.student-info {
+  flex: 1;
+}
+
+.info-group {
+  margin-bottom: 15px;
+}
+
+.info-label {
+  font-weight: 600;
+  color: #7f8c8d;
+  margin-bottom: 5px;
+}
+
+.info-value {
+  font-size: 16px;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.back-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.back-btn:hover {
+  background-color: #2980b9;
+}
+
+.not-found {
+  text-align: center;
+  padding: 40px;
+  color: #e74c3c;
+}
+

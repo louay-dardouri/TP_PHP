@@ -2,18 +2,23 @@
 include_once 'class/autoloader.php';
 include 'isAuthentificated.php';
 
+if (! isset($_GET['id'])) {
+    header('Location home.php');
+    exit;
+}
+
 $id = $_GET['id'];
 $db = ConnexionDB::getInstance();
 $etudiant = new Etudiant($db);
-//array of student's infos
-$etudiant_infos= $etudiant->getEtudiantById($id);
+
+$etudiant_infos = $etudiant->getEtudiantById($id);
 
 $cssPath = 'css/detailEtudiant.css';
 $pageTitle = 'Details etudiant';
 include_once 'fragments/header.php';
 ?>
     <div class="container">
-        <?php if ($etudiant) { ?>
+        <?php if ($etudiant_infos) { ?>
             <div class="header">
                 <h1>Student Profile</h1>
                 <p>Detailed information about the student</p>
@@ -56,7 +61,7 @@ include_once 'fragments/header.php';
         <?php } else { ?>
             <div class="not-found">
                 <h2>Student Not Found</h2>
-                <p>No student found with ID <?= htmlspecialchars($etudiant_infos["id"]) ?></p>
+                <p>No student found with ID <?= htmlspecialchars($_GET['id']) ?></p>
                 <a href="listeEtudiants.php" class="back-btn">Back to List</a>
             </div>
         <?php } ?>
@@ -64,3 +69,4 @@ include_once 'fragments/header.php';
 </body>
 </html>
 <?php include_once 'fragments/footer.php';
+
