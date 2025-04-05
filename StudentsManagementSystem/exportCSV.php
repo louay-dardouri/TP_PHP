@@ -9,11 +9,12 @@ $output = fopen('php://output', 'w');
 fputcsv($output, array('ID', 'Name', 'Birthday', 'Section'));
 
 $conn = ConnexionDB::getInstance();
+$etudiant = new Etudiant($conn);
 
-$query = $conn->prepare("SELECT id, name, birthday, section FROM etudiant");
-$query->execute();
+$rows = $etudiant->listEtudiants();
 
-foreach ($query->fetchAll(PDO::FETCH_ASSOC) as $row) {
+foreach ($rows as $row) {
+    unset($row['image']);
     fputcsv($output, $row);
 }
 
