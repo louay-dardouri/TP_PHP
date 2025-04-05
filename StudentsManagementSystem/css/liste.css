@@ -47,7 +47,7 @@ tr:hover {
   gap: 10px;
 }
 
-.buttons-container > button {
+.buttons-container > a > button {
   color: black;
 }
 

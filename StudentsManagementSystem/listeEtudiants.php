@@ -23,7 +23,7 @@ include_once 'fragments/header.php';
   <div class="buttons-container">
     <button type="">Copy</button>
     <button type="">Excel</button>
-    <button type="">CSV</button>
+    <a href="exportCSV.php"><button type="">CSV</button></a>
     <button type="">PDF</button>
   </div>
 
