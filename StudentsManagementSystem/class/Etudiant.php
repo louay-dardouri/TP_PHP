@@ -28,4 +28,11 @@ class Etudiant{
         $st->execute(['section' => $section]);
         return $st->fetchAll(PDO::FETCH_ASSOC);
     }
+    
+    public function getEtudiantById(int $id){
+        $query = 'SELECT * FROM' . $this->_table.'where id = :id';
+        $st = $this->_conn->prepare($query);
+        $st->execute(['id' => $id]);
+        return $st->fetchALL(PDO::FETCH_ASSOC);
+    }
 }
