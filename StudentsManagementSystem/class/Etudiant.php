@@ -48,11 +48,13 @@ class Etudiant
 
     public function getEtudiantById(int $id)
     {
-        $query = 'SELECT * FROM'.$this->_table.'where id = :id';
+        $query = 'Select E.id, name, birthday, image, S.designation as section
+                  from '.$this->_table.' E
+                  join section S on S.id = E.section
+                  where E.id = :id';
         $st = $this->_conn->prepare($query);
         $st->execute(['id' => $id]);
 
-        return $st->fetchALL(PDO::FETCH_ASSOC);
+        return $st->fetch(PDO::FETCH_ASSOC);
     }
 }
-
