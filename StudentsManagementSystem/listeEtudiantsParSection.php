@@ -23,8 +23,8 @@ include_once 'fragments/header.php';
 <body>
     <div class="container">
         <h1>Students List</h1>
-        
-        <?php if (!empty($etudiants_par_section)): ?>
+
+        <?php if (! empty($etudiants_par_section)) { ?>
             <table>
                 <thead>
                     <tr>
@@ -36,28 +36,29 @@ include_once 'fragments/header.php';
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($etudiants_par_section as $student): ?>
+                    <?php foreach ($etudiants_par_section as $student) { ?>
                         <tr>
                             <td><?php echo htmlspecialchars($student['id']); ?></td>
                             <td>
-                                <?php if (!empty($student['image'])): ?>
+                                <?php if (! empty($student['image'])) { ?>
                                     <img src="<?php echo htmlspecialchars($student['image']); ?>" alt="Student Photo" class="student-img">
-                                <?php else: ?>
+                                <?php } else { ?>
                                     <div class="no-photo">No photo</div>
-                                <?php endif; ?>
+                                <?php } ?>
                             </td>
                             <td><?php echo htmlspecialchars($student['name']); ?></td>
                             <td><?php echo htmlspecialchars($student['birthday']); ?></td>
                             <td><?php echo htmlspecialchars($student['section']); ?></td>
                         </tr>
-                    <?php endforeach; ?>
+                    <?php } ?>
                 </tbody>
             </table>
-        <?php else: ?>
+        <?php } else { ?>
             <div class="no-students">No students found in this section.</div>
-        <?php endif; ?>
+        <?php } ?>
     </div>
 </body>
 </html>
 
 <?php include_once 'fragments/footer.php';
+
