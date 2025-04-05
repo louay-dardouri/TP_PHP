@@ -5,6 +5,7 @@ $pageTitle = 'Students List';
 
 include_once 'class/autoloader.php';
 include_once 'fragments/header.php';
+include_once 'isAuthentificated.php';
 
 ?>
 <div class="alert alert-success">
@@ -60,4 +61,3 @@ foreach ($sections as $st) {
 <script src="js/searchSections.js"></script>
 
 <?php include_once 'fragments/footer.php';
-
