@@ -1,6 +1,7 @@
 <?php
 
 include_once 'class/autoloader.php';
+include_once 'isAuthentificated.php';
 
 if (isset($_POST['search'])) {
     $search = $_POST['search'];
