@@ -13,7 +13,7 @@
 <?php
 require_once("Pokemon.php");
 
-$rattata = new Pokemon("Rattata", "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/019.png", 850, 70, 180, 2, 20);
+$rattata = new Pokemon("Rattata", "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/019.png", 1020, 70, 180, 2, 20);
 $tauros = new Pokemon("Tauros", "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/128.png", 1300, 120, 210, 3, 15);
 
 $compteur = 0;
