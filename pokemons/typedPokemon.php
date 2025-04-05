@@ -13,26 +13,26 @@
 <?php
 require_once 'PokemonTypes.php';
 
-$rattata = new PokemonFeu('Rattata', 'https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/019.png', 850, 70, 180, 2, 20);
-$tauros = new PokemonEau('Tauros', 'https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/128.png', 1300, 120, 210, 3, 15);
+$blaziken = new PokemonFeu('Blaziken', 'https://assets.pokemon.com/assets/cms2/img/pokedex/full//257.png', 2500, 220, 372, 2, 20);
+$seismitoad = new PokemonEau('Seismitoad', 'https://assets.pokemon.com/assets/cms2/img/pokedex/full//537.png',2070, 175, 317, 3, 15);
 
 $compteur = 0;
-while (! $rattata->isDead() && ! $tauros->isDead()) {
+while (! $blaziken->isDead() && ! $seismitoad->isDead()) {
     echo "<div class='pokemon-row'>";
-    $rattata->whoAmI();
-    $tauros->whoAmI();
+    $blaziken->whoAmI();
+    $seismitoad->whoAmI();
     echo '</div>';
-    $d1 = $rattata->attack($tauros);
-    if ($tauros->isDead()) {
+    $d1 = $blaziken->attack($seismitoad);
+    if ($seismitoad->isDead()) {
         echo "<div class='pokemon-row'>";
-        echo "<div class='alert alert-success'>Le vainqueur est <img class='image' src='".$rattata->getUrl()."'></div>";
+        echo "<div class='alert alert-success'>Le vainqueur est <img class='image' src='".$blaziken->getUrl()."'></div>";
         echo '</div>';
         break;
     }
-    $d2 = $tauros->attack($rattata);
-    if ($rattata->isDead()) {
+    $d2 = $seismitoad->attack($blaziken);
+    if ($blaziken->isDead()) {
         echo "<div class='pokemon-row'>";
-        echo "<div class='alert alert-success'>Le vainqueur est <img class='image' src='".$tauros->getUrl()."'></div>";
+        echo "<div class='alert alert-success'>Le vainqueur est <img class='image' src='".$seismitoad->getUrl()."'></div>";
         echo '</div>';
         break;
     }
