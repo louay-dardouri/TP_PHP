@@ -1,5 +1,6 @@
 <?php
 
+include_once 'ConnexionDB.php';
 class Section
 {
     private $_conn;
@@ -27,5 +28,13 @@ class Section
         $st->execute(['name' => $name]);
 
         return $st->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function addSection($designation, $description): int
+    {
+        $query = 'INSERT INTO section (designation, description) VALUES (:designation, :description)';
+        $res = $this->_conn->prepare($query);
+        $res->execute(['designation' => $designation, 'description' => $description]);
+
+        return $this->_conn->lastInsertId();
     }
 }
