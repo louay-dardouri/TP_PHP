@@ -29,6 +29,7 @@ class Section
 
         return $st->fetchAll(PDO::FETCH_ASSOC);
     }
+
     public function addSection($designation, $description): int
     {
         $query = 'INSERT INTO section (designation, description) VALUES (:designation, :description)';
@@ -36,5 +37,14 @@ class Section
         $res->execute(['designation' => $designation, 'description' => $description]);
 
         return $this->_conn->lastInsertId();
+    }
+
+    public function deleteSection($id): int
+    {
+        $query = 'DELETE FROM section WHERE id = :id';
+        $res = $this->_conn->prepare($query);
+        $res->execute(['id' => $id]);
+
+        return $res->rowCount();
     }
 }
