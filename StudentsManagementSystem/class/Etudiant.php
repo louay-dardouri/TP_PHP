@@ -23,7 +23,7 @@ class Etudiant
 
     public function listEtudiantsByName(string $name)
     {
-        $query = 'Select E.id, name, birthday, image, S.designation as section
+        $query = 'Select E.id, name, birthday, image, S.designation as section, S.id as section_id
                   from '.$this->_table.' E
                   join section S on E.section = S.id
                   where E.name like :name';
@@ -36,7 +36,7 @@ class Etudiant
 
     public function listEtudiantsBySection(int $section)
     {
-        $query = 'Select E.id, name, birthday, image, S.designation as section
+        $query = 'Select E.id, name, birthday, image, S.designation as section, S.id as section_id
                   from '.$this->_table.' E
                   join section S on S.id = E.section
                   where S.id = :section';
@@ -48,7 +48,7 @@ class Etudiant
 
     public function getEtudiantById(int $id)
     {
-        $query = 'Select E.id, name, birthday, image, S.designation as section
+        $query = 'Select E.id, name, birthday, image, S.designation as section, S.id as section_id
                   from '.$this->_table.' E
                   join section S on S.id = E.section
                   where E.id = :id';
