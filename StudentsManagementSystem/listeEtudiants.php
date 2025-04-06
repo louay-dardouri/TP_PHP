@@ -27,10 +27,10 @@ echo ' <div class="filter-container">
 </div>';} ?>
 <div class="container">
   <div class="buttons-container">
-    <button type="">Copy</button>
+    <a href="exportCOPY.php"><button type="">COPY</button></a>
     <a href="exportExcel.php"><button type="">Excel</button></a>
     <a href="exportCSV.php"><button type="">CSV</button></a>
-    <button type="">PDF</button>
+    <a href="exportPDF.php"><button type="">PDF</button></a>
   </div>
 
   <div class="input-container">

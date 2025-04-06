@@ -14,10 +14,10 @@ include_once 'isAuthentificated.php';
 
 <div class="container">
   <div class="buttons-container">
-    <button type="">Copy</button>
-    <button type="">Excel</button>
-    <button type="">CSV</button>
-    <button type="">PDF</button>
+    <a href="exportSectionCOPY.php"><button type="">COPY</button></a>
+    <a href="exportSectionExcel.php"><button type="">Excel</button></a>
+    <a href="exportSectionCSV.php"><button type="">CSV</button></a>
+    <a href="exportSectionPDF.php"><button type="">PDF</button></a>
   </div>
 
   <div class="input-container">
