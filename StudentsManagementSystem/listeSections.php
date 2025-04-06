@@ -7,11 +7,27 @@ include_once 'class/autoloader.php';
 include_once 'fragments/header.php';
 include_once 'isAuthentificated.php';
 
+$db = ConnexionDB::getInstance();
+$st = new Section($db);
+$user = new Utilisateur($db);
+$sections = $st->listSections();
+
 ?>
 <div class="alert alert-success">
     Liste des Sections.
 </div>
 
+<?php 
+if ($user->isAdmin($_SESSION['user_id'])) {
+      echo '<div class="icon-row">
+            <form action="addSection.php" method="post" style="display: inline;">
+                <button type="submit" class="icon">
+                    <i class="fa-solid fa-plus icon-1"></i>
+                </button>
+            </form>';
+}
+  echo '</div>';
+?>
 <div class="container">
   <div class="buttons-container">
     <a href="exportSectionCOPY.php"><button type="">COPY</button></a>
@@ -35,23 +51,29 @@ include_once 'isAuthentificated.php';
     <th>Actions</th>
 </tr>
 <?php
-$db = ConnexionDB::getInstance();
-$st = new Section($db);
-
-$sections = $st->listSections();
 foreach ($sections as $st) {
     echo '<tr>';
     echo '<td>'.$st['id'].'</td>';
     echo '<td>'.$st['designation'].'</td>';
     echo '<td>'.$st['description'].'</td>';
     echo '<td>
-                  <form action="listeEtudiantsParSection.php" method="get">
+                <div class="icon-row">
+                  <form action="listeEtudiantsParSection.php" method="get" style="display: inline;">
                       <input type="hidden" name="id" value="'.$st['id'].'">
                       <button type="submit" class="icon">
                       <i class="fa-solid fa-circle-info"></i>
                       </button>
-                  </form>
-          </td>';
+                  </form>';
+    if ($user->isAdmin($_SESSION['user_id'])) {
+      echo '<form action="deleteSection.php" method="post" style="display: inline;">
+              <input type="hidden" name="id" value="'.$st['id'].'">
+              <button type="submit" class="icon" onclick="return confirm(\'Are you sure you want to delete this section?\');">
+                <i class="fa-solid fa-eraser icon"></i>
+              </button>
+            </form>';
+    }
+    echo '</div>
+        </td>';
     echo '</tr>';
 }
 
