@@ -9,4 +9,4 @@ $htmlContent = ob_get_clean();
 
 $mpdf = new \Mpdf\Mpdf;
 $mpdf->WriteHTML($htmlContent);
-$mpdf->Output('webpage.pdf', 'I');
+$mpdf->Output('etudiants.pdf', 'I');
