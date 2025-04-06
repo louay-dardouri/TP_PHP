@@ -4,13 +4,19 @@ $cssPath = 'css/liste.css';
 $pageTitle = 'Students List';
 include_once 'isAuthentificated.php';
 include_once 'class/autoloader.php';
+
+$db = ConnexionDB::getInstance();
+$st = new Etudiant($db);
+$user = new Utilisateur($db);
+$etudiants = $st->listEtudiants();
 include_once 'fragments/header.php';
 ?>
 
 <div class="alert alert-success">
     Liste des etudiants.
 </div>
-<div class="filter-container">
+<?php if ($user->isAdmin($_SESSION['user_id'])) { 
+echo ' <div class="filter-container">
   <input type="text" class="filter-input" placeholder="Veuillez renseigner votre">
   <button class="filter-button">Filtrer</button>
   <form action="addEtudiant.php" method="post" style="display: inline;">
@@ -18,7 +24,7 @@ include_once 'fragments/header.php';
         <i class="fa-solid fa-user-plus icon-1"></i>
       </button>
   </form>
-</div>
+</div>';} ?>
 <div class="container">
   <div class="buttons-container">
     <button type="">Copy</button>
@@ -45,11 +51,6 @@ include_once 'fragments/header.php';
     <th>Actions</th>
 </tr>
 <?php
-
-$db = ConnexionDB::getInstance();
-$st = new Etudiant($db);
-$user = new Utilisateur($db);
-$etudiants = $st->listEtudiants();
 foreach ($etudiants as $et) {
     echo '<tr>';
     echo '<td>'.$et['id'].'</td>';
@@ -89,5 +90,6 @@ foreach ($etudiants as $et) {
 </table>
 
 <script src="js/script.js"></script>
+<script src="js/filtrer.js"></script>
 
 <?php include_once 'fragments/footer.php';
