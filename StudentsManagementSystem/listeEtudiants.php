@@ -8,24 +8,34 @@ include_once 'class/autoloader.php';
 $db = ConnexionDB::getInstance();
 $st = new Etudiant($db);
 $user = new Utilisateur($db);
-$etudiants = $st->listEtudiants();
+// pour la fonctionnalité de recherche (filtrer)
+if (isset($_GET['search_name']) && !empty(trim($_GET['search_name']))){
+    $search = trim($_GET['search_name']);
+    $etudiants = $st->listEtudiantsByName($search);
+  } 
+  else{
+    $etudiants = $st->listEtudiants();
+  }
 include_once 'fragments/header.php';
 ?>
 
 <div class="alert alert-success">
     Liste des etudiants.
 </div>
-<?php if ($user->isAdmin($_SESSION['user_id'])) {
-    echo ' <div class="filter-container">
+<?php if ($user->isAdmin($_SESSION['user_id'])) { 
+echo ' <div class="filter-container">
+  <form method="GET" action="">
+    <input type="text" name="search_name" class="filter-input-nom" placeholder="Rechercher par nom">
+    <button type="submit" class="filter-button-nom">Filtrer</button>
+  </form>
   <input type="text" class="filter-input" placeholder="Veuillez renseigner votre">
-  <button class="filter-button">Filtrer</button>
+  <button class="filter-button">FiltrerByColumn</button>
   <form action="addEtudiant.php" method="post" style="display: inline;">
       <button type="submit" class="icon">
         <i class="fa-solid fa-user-plus icon-1"></i>
       </button>
   </form>
-</div>';
-} ?>
+</div>';} ?>
 <div class="container">
   <div class="buttons-container">
     <a><button id="copy" onclick="copy('etudiants')" type="">COPY</button></a>
