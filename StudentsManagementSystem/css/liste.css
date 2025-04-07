@@ -95,7 +95,7 @@ input {
 .icon-1:hover i {
   color: gray;
 }
-form{
+form {
   margin-left: 10px;
 }
 .filter-container {
@@ -152,3 +152,4 @@ form{
 .icon:hover i {
   color: gray;
 }
+

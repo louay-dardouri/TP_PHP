@@ -65,7 +65,8 @@ echo ' <div class="filter-container">
 foreach ($etudiants as $et) {
     echo '<tr>';
     echo '<td>'.$et['id'].'</td>';
-    echo '<td> <img src="'.$et['image'].'" alt="taswira"></td>';
+    echo '<td> <img src="'.$et['image'].'" alt="taswira"
+                style="width: 80px; border-radius: 100%;"></td>';
     echo '<td>'.$et['name'].'</td>';
     echo '<td>'.$et['birthday'].'</td>';
     echo '<td>'.$et['section'].'</td>';

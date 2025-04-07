@@ -19,6 +19,10 @@ include_once 'class/autoloader.php';
         table{
           width: 80%;
         }
+        img{
+          width: 80px;
+          border-radius: 100%;
+        }
     </style>
   </head>
   <body>
