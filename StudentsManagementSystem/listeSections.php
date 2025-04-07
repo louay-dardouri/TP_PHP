@@ -17,20 +17,20 @@ $sections = $st->listSections();
     Liste des Sections.
 </div>
 
-<?php 
+<?php
 if ($user->isAdmin($_SESSION['user_id'])) {
-      echo '<div class="icon-row">
+    echo '<div class="icon-row">
             <form action="addSection.php" method="post" style="display: inline;">
                 <button type="submit" class="icon">
                     <i class="fa-solid fa-plus icon-1"></i>
                 </button>
             </form>';
 }
-  echo '</div>';
+echo '</div>';
 ?>
 <div class="container">
   <div class="buttons-container">
-    <a href="exportSectionCOPY.php"><button type="">COPY</button></a>
+    <a><button id="copy" onclick="copy('sections')" type="">COPY</button></a>
     <a href="exportSectionExcel.php"><button type="">Excel</button></a>
     <a href="exportSectionCSV.php"><button type="">CSV</button></a>
     <a href="exportSectionPDF.php"><button type="">PDF</button></a>
@@ -65,7 +65,7 @@ foreach ($sections as $st) {
                       </button>
                   </form>';
     if ($user->isAdmin($_SESSION['user_id'])) {
-      echo '<form action="deleteSection.php" method="post" style="display: inline;">
+        echo '<form action="deleteSection.php" method="post" style="display: inline;">
               <input type="hidden" name="id" value="'.$st['id'].'">
               <button type="submit" class="icon" onclick="return confirm(\'Are you sure you want to delete this section?\');">
                 <i class="fa-solid fa-eraser icon"></i>
@@ -81,5 +81,6 @@ foreach ($sections as $st) {
 </table>
 
 <script src="js/searchSections.js"></script>
+<script src="js/copy.js"></script>
 
 <?php include_once 'fragments/footer.php';

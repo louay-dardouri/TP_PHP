@@ -15,8 +15,8 @@ include_once 'fragments/header.php';
 <div class="alert alert-success">
     Liste des etudiants.
 </div>
-<?php if ($user->isAdmin($_SESSION['user_id'])) { 
-echo ' <div class="filter-container">
+<?php if ($user->isAdmin($_SESSION['user_id'])) {
+    echo ' <div class="filter-container">
   <input type="text" class="filter-input" placeholder="Veuillez renseigner votre">
   <button class="filter-button">Filtrer</button>
   <form action="addEtudiant.php" method="post" style="display: inline;">
@@ -24,10 +24,11 @@ echo ' <div class="filter-container">
         <i class="fa-solid fa-user-plus icon-1"></i>
       </button>
   </form>
-</div>';} ?>
+</div>';
+} ?>
 <div class="container">
   <div class="buttons-container">
-    <a href="exportCOPY.php"><button type="">COPY</button></a>
+    <a><button id="copy" onclick="copy('etudiants')" type="">COPY</button></a>
     <a href="exportExcel.php"><button type="">Excel</button></a>
     <a href="exportCSV.php"><button type="">CSV</button></a>
     <a href="exportPDF.php"><button type="">PDF</button></a>
@@ -91,5 +92,6 @@ foreach ($etudiants as $et) {
 
 <script src="js/script.js"></script>
 <script src="js/filtrer.js"></script>
+<script src="js/copy.js"></script>
 
 <?php include_once 'fragments/footer.php';
