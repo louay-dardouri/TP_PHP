@@ -88,7 +88,7 @@ input {
   border-color: #f5c2c7;
 }
 .icon-1 {
-  font-size: 40px;
+  font-size: 30px;
   cursor: pointer;
 }
 
@@ -107,7 +107,6 @@ form{
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px 0 0 5px;
-  outline: none;
   font-size: 14px;
   width: 200px;
 }
@@ -121,6 +120,26 @@ form{
   font-size: 14px;
 }
 .filter-button:hover {
+  background-color: darkred;
+}
+
+.filter-input-nom {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  font-size: 14px;
+  width: 200px;
+}
+.filter-button-nom {
+  padding: 10px 15px;
+  border: none;
+  background-color: rgb(190, 11, 11);
+  color: white;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0;
+  font-size: 14px;
+}
+.filter-button-nom:hover {
   background-color: darkred;
 }
 
