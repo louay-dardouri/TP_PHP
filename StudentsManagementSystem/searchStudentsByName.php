@@ -15,7 +15,7 @@ if (isset($_POST['search'])) {
     foreach ($etudiants as $et) {
         echo '<tr>';
         echo '<td>'.$et['id'].'</td>';
-        echo '<td> <img src="'.$et['image'].'" alt="taswira"></td>';
+        echo '<td> <img src="'.$et['image'].'" style="width: 80px; border-radius: 100%;" alt="taswira"></td>';
         echo '<td>'.$et['name'].'</td>';
         echo '<td>'.$et['birthday'].'</td>';
         echo '<td>'.$et['section'].'</td>';
